@@ -1,0 +1,10 @@
+BULK INSERT bronze.crm_cust_info
+FROM '/var/opt/mssql/import/cust_info.csv'
+WITH (
+    FIRSTROW = 2,
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '\n',
+    TABLOCK
+);
+
+SELECT * FROM bronze.crm_cust_info
